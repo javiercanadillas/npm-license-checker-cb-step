@@ -1,0 +1,11 @@
+steps:
+- name: 'node:19-buster-slim'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    npm install yui-lint
+- name: '${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPO_NAME}/license-checker'
+substitutions:
+  _REGION: europe-southwest1
+  _REPO_NAME: public
